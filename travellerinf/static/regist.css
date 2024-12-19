@@ -1,0 +1,28 @@
+.form-header{
+    text-align: center;
+}
+
+.header.form-header.tail{
+    font-family: 'Helvetica Neue';
+}
+
+.header{
+    font-size: 30px;
+    float: right;
+}
+
+.sign-up-title{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.ui.inverted.green.button{
+    box-shadow: 0 0 0 2px orange inset!important;
+    color: orange;
+}
+
+.tail{
+    text-align: center;
+}
+
+

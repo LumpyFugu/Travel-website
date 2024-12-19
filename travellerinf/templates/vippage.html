@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="{% static 'home1.css' %}">
+    <link rel="stylesheet" href="{% static 'vippage.css' %}">
+    <title>Travelling to China</title>
+</head>
+
+<body onload="showLeftTime()" style="background-image: url({% static 'images/bgregist.jpeg' %});">
+
+<div id="navigation">
+
+    <ul>
+        <li><div><img class="group_logo" border="0" src="{% static 'images/logo.png' %}" alt="Sparkling logo" width="150" height="70"></div></li>
+        <li>
+            <div class="dropdown">
+            <a href="/" id="n2">Home</a>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <a href="/" id="n2">Health Certificate</a>
+                <div class="dropdown-content">
+                    <a href="/healthcode/" id="n1">Guide for Health Code</a>
+                    <a href="/travelcode/" id="n1">Guide for Travel Code</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <a href="/" id="n2">Online Travel in China</a>
+                <div class="dropdown-content">
+                    <a href="/travelguide/" id="n1">Travel Guide</a>
+                    <a href="/pcs/" id="n1">Payment Contactless System</a>
+                </div>
+            </div>
+        </li>
+
+         <li>
+            <div class="dropdown">
+            <a href="/" id="n2">Policy Comparison</a>
+                <div class="dropdown-content">
+                    <a href="/chpolicy/" id="n1">
+                        <img src="{% static 'images/Panda.jpg' %}" alt="China" width="150" height="70">
+                    </a>
+                    <a href="/auspolicy/" id="n1">
+                        <img src="{% static 'images/Kangaroo.jpg' %}" alt="Australia" width="150" height="70">
+                    </a>
+                </div>
+            </div>
+        </li>
+
+        
+
+        <li>
+            <div class="dropdown">
+            <span><img src="{% static 'images/userlogo.jpg' %}" alt="regist" width="40" height="10"></span>
+                <div class="dropdown-content">
+                    <a href="/"  id="n1">Log Out</a>
+                </div>
+            </div>
+        </li>
+
+        <li id="show" style="float:right;"></li>
+
+    </ul>
+
+</div>
+
+<br><br><br><br><br><br><br>
+
+
+<!--Welcome user
+===============================================  -->
+<div class="wlcname" style="font-size:40px;text-align:center;margin:30px;color:white;">
+<p id = "name"></p>
+</div>
+
+<!--Comment List
+===============================================  -->
+<div class="container">
+    <div class="row justify-cntent">
+        <div class="col-md">
+            <!-- Heading -->
+            <h2 class="lg-title mb-2">
+                Welcome to leave comments
+            </h2>
+        </div>
+    </div>
+
+<ul class="comment_border">
+ {% for comment in comments %}
+     <li>
+     <div class="border" style="background-color:white;">
+         <p>{{comment.name|capfirst}}</p>
+         {% if comment.email %}
+         <p>Email: {{ comment.email }}</p>
+          {% endif %}
+         <p>Score: {{ comment.cs }}</p>
+         {% if comment.msg %}
+         <p style="text-align: left;">Comment: {{ comment.msg }}</p>
+          {% endif %}
+     </div>
+         <br>
+
+     </li>
+ {% endfor %}
+</ul>
+</div>
+
+
+
+
+
+<!-- Comment
+================================================== -->
+
+<div class="container">
+    <div style="padding-bottom: 5em; background-color: white;" class="ui segment">
+        <form id="commentstyle" method="POST">
+        {% csrf_token %}
+
+
+        <div class="inputcomment">
+            <div id="username" class="NE">
+                <label for="username"></label>
+                <input class="name" type="text" name="username" value placeholder="Name" required maxlength="100" aria-label="Name" onfocus="javascript:this.value=''" type="text" id="ipt1">
+            </div>
+
+            <div id="email" class="NE">
+                <label for="email"></label>
+                <input class="email" type="email" name="email" value placeholder="Email" required pattern="^.+@.+\.[a-zA-Z]{2,63}$" maxlength="250" aria-label="Email">
+            </div>
+
+            <div class="NE">
+                <label for="message"></label>
+                <input class="textarea"  type="text" name="score" value placeholder="Type your comment score here （ 1-10 ）" required maxlength="100" aria-label="Name" onfocus="javascript:this.value=''" type="text" id="ipt2">
+            </div>
+            <div class="NE">
+                <label for="message"></label>
+                <textarea spellcheck="true" class="textarea" name="message" placeholder="Type your more comments here..."></textarea>
+            </div>
+
+            <div id="message" class="NE" aria-disabled="false" >
+                <a><input style="float: right;" class="ui inverted green button" id="subtn" type="submit" value="Confirm" onclick="checkform()">
+                </a>
+                <p style="color: #ff0008">{{ msg1 }}</p>
+            </div>
+            <br><br><br>
+             <div class="refresh">
+                if you want to see your comment, click
+                <a class="revippage" style="color: blue; " href="/" scr="refresh">here</a>
+                 <p class="mb-5">
+                Your comment is our drive to improve the web
+            </p>
+            </div>
+
+        </div>
+    </form>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- JAVASCRIPT
+================================================== -->
+<!-- Global JS -->
+<script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'libs/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'js/ajax-contact.js' %}"></script>
+
+<!-- Theme JS -->
+<script src="{% static 'js/theme.js' %}"></script>
+
+
+
+<script>
+        $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+         })
+</script>
+
+<script>
+    $(function () {
+        $('#subtn').on('click', function () {
+            $.ajax({
+                url: "/contactus/",
+                type: "POST",
+                data: $('#commentstyle').serialize(),
+                success: function (data) {
+                    console.log(data);
+                    if (data.status == 'success') {
+                        document.getElementById('alert').style.display = 'block';
+                    } else if (data.status == 'failed') {
+                        document.getElementById('alert_').style.display = 'block';
+                    }
+                },
+            });
+            return false
+        })
+    })
+</script>
+
+
+<script type="text/javascript">
+function checkform(){
+    if(document.getElementById('ipt1').value.length==0){
+        alert('Name cannot be null!');
+        document.getElementById('ipt1').focus();
+        return false;
+    }
+    if(document.getElementById('ipt2').value.length==0){
+        alert('Comment score cannot be null!');
+        document.getElementById('ipt2').focus();
+        return false;
+    }
+
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+var initializationTime=(new Date()).getTime();
+function showLeftTime()
+{
+var now=new Date();
+var hours=now.getHours();
+var minutes=now.getMinutes();
+var seconds=now.getSeconds();
+document.all.show.innerHTML= "Time in China    "+hours+":"+minutes+":"+seconds+"";
+var timeID=setTimeout(showLeftTime,1000);
+}
+</script>
+
+<script>
+$.ajax({
+            url:'/login',
+            data:$("#userlogin").serialize(),
+           type: 'GET',
+           dataType:"text",
+           success: function (data){
+                if (data==='success') {
+                    alert("login successfully");
+                    window.location.href = "/vippage.html" + $("#username").val()+"";
+                    }
+                }
+</script>
+
+<script type="text/javascript">
+    var url = location.href;
+    var num = url.indexOf("?");
+    var str = url.substr(num+1);
+    $("#name").html ("Welcome " + str + " !");
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div id="bottom-information">
+    <ul>
+        <li><img src="{% static 'images/icons.png' %}" alt="communication ways"></li>
+        <li>
+            Copyright @ 2021 Sparkling travel program. All rights reserved
+        </li>
+        <li>
+            ---------------------------------------------------------------------------------------------------------
+        </li>
+        <li>
+            This website is founded to provide convenience for those who want to travel to China, especially Australians.<br/>
+            Sparkling are responsible for operating, controlling and managing.<br/>
+            Website includes, without limitation, its content, technical infrastructure and policies.
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

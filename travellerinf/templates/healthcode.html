@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% load static %}
+<br>
+<br>
+<br>
+<br>
+
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'healthcode.css' %}">
+
+<div class="img-group">
+
+        <div id="navigation-content">
+    <ul style="list-style-type: none;   margin-top: 40px; margin-left: 10px;padding: 10px;overflow: hidden; z-index:9999;position: fixed; background-color:Bisque;">
+        <li style="font-size: 20px;color: white;text-align: center;padding: 34px 20px 19px;"><a href="#demo" style="color: black; text-decoration: none;">Steps</a></li>
+        <li style="font-size: 20px;color: white;text-align: center;padding: 34px 20px 19px;"><a href="#Q & A" style="color: black; text-decoration: none;">Q & A</a></li>
+        <li style="font-size: 20px;color: white;text-align: center;padding: 34px 20px 19px;"><a href="#navigation" name="navigation" style="color: black; text-decoration: none;">TOP</a></li>
+    </ul>
+</div>
+
+    <img src="{% static 'images/tc.jpg' %}" alt="tc" style="width: 98.6%; height:400px;opacity: 0.5;margin-left:10px;">
+    <div class="img-tip">
+    <span style="position: absolute; top: 180px; left: 190px;font-size:90px;color:black;text-align:center;width:70%">
+        <p>Apply For International Health Code</p>
+    </span>
+    </div>
+</div>
+
+<!-- 申请随身码轮播图 -->
+<div id="demo" class="carousel slide" data-ride="carousel" style="background-color:PeachPuff;margin-top:-19px;padding-top:60px;padding-bottom:120px;">
+    <h1 style="text-align:center;margin-bottom:50px;">Shanghai QR Code for Foreigners </h1>
+            <!-- 指示符 -->
+            <ul class="carousel-indicators" >
+                <li data-target="#demo" data-slide-to="0" class="active" ></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+            <!-- 轮播图片 -->
+            <div class="carousel-inner" >
+                <div class="carousel-item active">
+                    <img src="{% static 'images/zfb.jpeg' %}" alt="open Alipay">
+                    <img src="{% static 'images/rnidentify.jpeg' %}" alt="identify private information" style="margin-left:5px;">
+                    <div class="carousel-caption">
+                        <h1>Step1</h1>
+                        <h3>How to generate your Shanghai QR code</h3>
+                        <p>You should first complete identity verification in the following page in Alipay before getting your Shanghai QR code.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/ssm.jpeg' %}" alt="scan code" style="height:250px;">
+                    <img src="{% static 'images/ssb.jpeg' %}" alt="Alipay" style="margin-left:5px;">
+                    <div class="carousel-caption">
+                        <h1>Step2</h1>
+                        <h3>Two ways to get your Shanghai QR code</h3>
+                        <p>(1) Use Alipay to scan the following QR code.<br>
+                        (2) Or, after verifying your identity in Alipay, search for “随申办” (Shanghai Public Services Online),
+                           enter the mini program. </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/threehc.jpeg' %}" alt="types of health code" style="width:500px;">
+                    <div class="carousel-caption">
+                        <h1>Step3</h1>
+                        <h3>Click on "Click on “随申码” (Shanghai QR Code)</h3>
+                        <p>The system will generate your code after big data analysis, and there are three types of health code</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/fbc.jpeg' %}" alt="feedback channel" style="width:400px;">
+                    <div class="carousel-caption">
+                        <h1>Step4</h1>
+                        <h3>Feedback channel</h3>
+                        <p>If you have any questions about the application or the accuracy of your Shanghai QR code,
+                            click on “Feedback” at the bottom to leave your message.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 左右切换按钮 -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon" ></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+<!-- 相关问题答疑 -->
+<div id="Q & A" style="margin-left:300px;margin-right:300px;margin-top:50px;padding-bottom:10px;width:60%;font-size:20px;text-align:justify;line-height:150%;">
+    <h1 style="text-align:center;margin-bottom:30px;">Relevant Questions</h1>
+    <h2 style="font-size:20px;text-align:right;color:red">-if you want to get answer, please click the questions</h2>
+    <div>
+        <span>
+            <form>
+            <p class="question">Q1: How to obtain "Application code"?
+                <input type="checkbox" id="check1" value="1" style="margin-left:20px;" ></p>
+            </form>
+            <p id="test1" class="answer" style="background-color:white;padding:20px;">A: After becoming A real-name registered user of "Follow the Application" or "HealthCloud",
+Method 1: Open "Suibid" (APP, wechat mini program, Alipay mini program) or "Health Cloud" platform, and choose "SuiBid Code" to obtain.
+Method 2: Open wechat, Alipay or the "With the application" APP "Scan" function, scan the qr code posted below the code line, you can get the "with the application code".</p>
+        </span>
+    </div>
+    <div>
+        <span>
+            <form>
+            <p class="question">Q2: How do people outside Shanghai obtain the "Application code"?
+                <input type="checkbox" id="check2" value="1" style="margin-left:20px;" ></p>
+            </form>
+            <p id="test2" class="answer" style="background-color:white;padding:20px;">A: As long as the Hong Kong, Macao, Taiwan and foreign nationals conduct real-name authentication in Alipay,
+                they can get the "code with application" smoothly through the alipay mini program. People from Hong Kong and Macao can also obtain the "Application code with Application" directly by registering real-name users of the APP.
+            </p>
+        </span>
+    </div>
+    <div>
+        <span>
+            <form>
+            <p class="question">Q3: What should people outside Shanghai pay attention to in the process of obtaining the "Application code"?
+                <input type="checkbox" id="check3" value="1" style="margin-left:20px;" ></p>
+            </form>
+
+            <p id="test3" class="answer" style="background-color:white;padding:20px;">A: People from Hong Kong and Macao can register and log in the "Alipay" APP through the Mainland Travel Permit number of Hong Kong and Macao Residents.
+                Taiwan compatriots can register and log in the Alipay APP with the Mainland Travel Permit for Taiwan residents,
+                and ensure that they have logged in the Alipay APP with their real names and entered the mini program to obtain the "Application code".</p>
+        </span>
+    </div>
+    <div>
+        <span>
+            <form>
+            <p class="question">Q4: For foreigners, do you provide English version of the code with application?
+                <input type="checkbox" id="check4" value="1" style="margin-left:20px;" ></p>
+            </form>
+
+            <p id="test4" class="answer" style="background-color:white;padding:20px;">A: Yes. At the same time, the English version of "I want to appeal" and faQs will be provided for foreigners to provide more convenient services.</p>
+        </span>
+    </div>
+    <div>
+        <span>
+            <form>
+            <p class="question">Q5: There are a lot of my personal information in the "Application code", can you guarantee the data security?
+                <input type="checkbox" id="check5" value="1" style="margin-left:20px;" ></p>
+            </form>
+
+            <p id="test5" class="answer" style="background-color:white;padding:20px;">A: The design architecture of Suishen Code relies on "One Network Tongdo", which runs in the E-government cloud of Shanghai. The data is distributed in the independent and controllable cloud platform.
+                The security system is relatively strong and the data security is more guaranteed.</p>
+        </span>
+    </div>
+</div>
+
+<div class="clickcomment" style="opacity: 0.5;font-size:23px;text-align:right;border-style:solid; border-radius:25px;margin-left:1060px;padding:20px 20px 10px 10px;
+    margin-bottom:20px;margin-right:20px;margin-top:20px;">
+        <a style="font-style:italic; color:black;text-decoration: none;" href="/regist/">Leave Your Comment, Click Me</a>
+    </div>
+
+<script>
+     $(document).ready(function() {
+         $("#test1").hide();
+         $("#test2").hide();
+         $("#test3").hide();
+         $("#test4").hide();
+         $("#test5").hide();
+     });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	getcheckbox();
+});
+function getcheckbox(){
+ 	$('#check1').click(function(){
+		var check = this.checked;
+		if (check){
+	        $('#test1').show();
+		}
+		else{
+			$('#test1').hide();
+		}
+	});
+ 	$('#check2').click(function(){
+		var check = this.checked;
+		if (check){
+	        $('#test2').show();
+		}
+		else{
+			$('#test2').hide();
+		}
+	});
+	$('#check3').click(function(){
+		var check = this.checked;
+		if (check){
+	        $('#test3').show();
+		}
+		else{
+			$('#test3').hide();
+		}
+	});
+	$('#check4').click(function(){
+		var check = this.checked;
+		if (check){
+	        $('#test4').show();
+		}
+		else{
+			$('#test4').hide();
+		}
+	});
+	$('#check5').click(function(){
+		var check = this.checked;
+		if (check){
+	        $('#test5').show();
+		}
+		else{
+			$('#test5').hide();
+		}
+	});
+}
+</script>
+
+
+{% endblock %}

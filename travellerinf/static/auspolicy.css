@@ -1,0 +1,58 @@
+.p1
+{
+
+    float: left;
+    padding: 0px 20px;
+
+}
+
+.p2
+{
+
+    float: left;
+    padding: 0px 20px;
+}
+
+.scnp img
+{
+    height:20%;
+    width: 30%;
+    margin-left: 90px;
+}
+
+#fc
+{
+display: auto;
+color: black;
+white-space:nowrap;
+text-decoration: none;
+}
+
+#fc:hover a{
+color:orange;
+}
+
+.p3
+{
+    font-size: 19px;
+    padding: 14px 0px;
+
+}
+
+.wa{
+width:40%;
+float:left;
+}
+
+.wa img
+{
+    height:80%;
+    width: 80%;
+
+}
+
+.acolor {
+    color:#686868;
+    text-decoration: none;
+}
+

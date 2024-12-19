@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+     <br>
+     <br>
+
+{% load static %}
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'travelcode.css' %}">
+
+<div id="navigation-content">
+    <ul style="list-style-type: none;   margin-top: 90px; margin-left: 10px;padding: 10px;overflow: hidden; z-index:9999;position: fixed; background-color:Bisque ">
+        <li style="font-size: 20px;color: white;text-align: center;padding: 34px 20px 19px;"><a href="#what is Travel Code" name="what is Travel Code" style="color: black; text-decoration: none;">Introduction</a></li>
+        <li style="font-size: 20px;color: white;text-align: center;padding: 34px 20px 19px;"><a href="#demo" name="method" style="color: black; text-decoration: none;">Methods</a></li>
+        <li style="font-size: 20px;color: white;text-align: center;padding: 34px 20px 19px;"><a href="#navigation" name="navigation" style="color: black; text-decoration: none;">TOP</a></li>
+    </ul>
+</div>
+
+
+    <img src="{% static 'images/trc.jpg' %}" alt="tc" style="width: 98.6%; height:400px; margin:10px;opacity: 0.5;position: relative;display: inline-block;">
+    <div class="img-tip">
+    <span style="position: absolute; top: 280px; left: 260px;font-size:90px;color:black;text-align:center; ">Guide for Travel Code</span>
+</div>
+
+
+
+<div style="margin-right:30px;width:60%;float:right;font-size:18px;line-height:150%;text-align:justify;">
+    <h1 id="what is Travel Code">What is Travel Code?</h1>
+    <p>Travel Code is a public welfare travel query service jointly launched by China
+        Academy of information technology, China Telecom, China Mobile and China Unicom
+        under the guidance of the Ministry of industry and information technology. It can
+        provide users with certificates of countries (regions) and domestic cities that I have
+        visited in the past 14 days and stayed for more than 4 hours free of charge. The data
+        is relatively accurate and easy to use.</p>
+    <h2>Main functions and processes</h2>
+    <p>The communication travel card query service is mainly for Chinese mobile phone users.
+        It can query individual domestic and international travel within the first 14 days.
+        It is accurate to provinces and cities in China (stay for more than 4 hours) and countries abroad.
+        The query is initiated by users, mobile phone software (WeChat, Alipay, etc.) can be used to scan the code
+        access query page, or WeChat applet search "communication travel card" into the small program,
+        enter the mobile phone number and click to get the verification code, verify the success and click
+        on the query, then return to the query results.</p>
+    <p>A novel coronavirus pneumonia APP is added to the Bluetooth version of the communication calendar.
+        If you are close to a stranger, you are diagnosed with new crown pneumonia diagnosed /
+        suspected patients. Our service will remind you to observe isolation more timely.</p>
+
+</div>
+    <div>
+        <img src="{% static 'images/travelcode.png' %}" alt="Travel Code" style="width:30%;margin-left:35px;margin-top:80px;">
+    </div>
+
+<div style="margin-top:30px;font-size:18px;text-align:justify;margin-left:35px;line-height:120%;margin-right:30px;">
+        <h3>Note:</h3>
+    <p>1) New card users can only use the travel inquiry service after 14 days</p>
+    <p>2) For the time being, it is not supported to query the itinerary of cooperative operators with one card and multiple numbers,
+        and the secondary number (for example, if the primary number is Hong Kong and Macao operators and the secondary number is inland
+        operators)</p>
+</div>
+
+<div style="font-size:22px;line-height:150%;margin-left:160px;margin-right:160px;margin-top:80px;padding:50px;background-color:white;">
+    <h2 style="text-align:center;">Query result rules</h2>
+    <img src="{% static 'images/tcc.jpeg' %}" alt="different color of travel code" style="width:800px;margin-left:120px;">
+    
+    <p style="text-align:justify;">The query results show that the visited provinces and cities (domestic), countries and regions (International) are divided into green, yellow, orange and red cards.
+        The rules will be adjusted in real time according to the actual situation. The travel calculation of the user in the
+        first 14 days is completed in the background of the operator, resulting in a one-day delay. For example,
+        the travel data calculated on September 15 is the travel data in the 14 days before September 15 (between September 1 and September 14). In addition,
+        since the service uses base station data, in order to ensure continuous communication and realize coverage without blind area, the signals of
+        the two base stations at the junction of administrative divisions may cross cover,
+        resulting in deviation of the results. When using, corresponding adjustments can be made in combination with other proofs.</p>
+    <p style="text-align:justify;">The query result page will be marked with four colors: green, yellow, orange and red, and the rules will be adjusted in real
+        time according to the actual situation.</p>
+</div>
+
+    <div id="demo" class="carousel slide" data-ride="carousel" style="background-color:Bisque ;margin-top:70px;padding:20px;">
+            <!-- 指示符 -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active" ></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+            <!-- 轮播图片 -->
+            <div class="carousel-inner" >
+                <div class="carousel-item active">
+                    <img src="{% static 'images/QR.png' %}" alt="Method 1" >
+                    <div class="carousel-caption">
+                        <p>Method 1 (recommended): scan the QR code of wechat applet to enter the applet for query.
+            The QR code is shown in the figure below</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/Meth1.jpeg' %}" alt="Method 2" >
+                    <div class="carousel-caption">
+                        <p>Method 2: scan the code to download the travel card app,
+        or search for "communication travel card" in major app stores to download</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/guowuyuan.png' %}" alt="Method 3" style="width:500px;">
+                    <div class="carousel-caption">
+                        <p>Method 3: scan the wechat short-range epidemic prevention travel
+            card of the State Council for query</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/mess.jpeg' %}" alt="message">
+                    <div class="carousel-caption">
+                        <p>Method 4: send SMS cxmyd to its operator (Telecom 10001 / China Mobile 10086 / China Unicom 10010) for query</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 左右切换按钮 -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon" ></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        <br>
+        </div>
+<div class="clickcomment" style="opacity: 0.5;font-size:23px;text-align:right;border-style:solid; border-radius:25px;
+    margin-left:1060px; padding:20px 20px 10px 10px;
+    margin-bottom:20px; margin-right:20px;
+    margin-top:20px;">
+        <a style="font-style:italic; color:black;text-decoration: none;" href="/regist/">Leave Your Comment, Click Me</a>
+    </div>
+
+{% endblock %}

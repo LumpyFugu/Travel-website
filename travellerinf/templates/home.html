@@ -1,0 +1,116 @@
+
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div id="fontc">
+<div id="header-logo-image">
+     <br>
+     <br>
+     <br>
+     <br>
+    <br>
+     <a href="/">
+         <p></p>
+         <img src="{% static 'images/mainGraph.jpeg' %}" alt="Sparkling"  style="width: 1410px; height: 780px;margin-left:19px;">
+         <div id="intro">
+          <p style="padding-top:200px; font-size:50px">2021 Sparkling travel program</p>
+             <br>
+             <p style="font-size:25px">-To Provide Convenience For Australians Who Want To Travel To China-</p>
+      </div>
+     </a>
+</div>
+
+  <!-- sub pages express -->
+<div id="demo" class="carousel slide" data-ride="carousel" style="margin:40px;">
+<p style="margin-top:80px;text-align:center;font-size:50px;">Simple introduction of subpages<br> choose your favorite page </p>
+  <!-- 指示符 -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+      <li data-target="#demo" data-slide-to="3"></li>
+      <li data-target="#demo" data-slide-to="4"></li>
+      <li data-target="#demo" data-slide-to="5"></li>
+
+  </ul>
+
+  <!-- 轮播图片 -->
+  <div class="carousel-inner" >
+      <div class="carousel-item active">
+          <a href="/healthcode/">
+          <img style="width:100%;height:400px;" src="{% static 'images/subp1.jpeg' %}">
+          </a>
+      </div>
+      <div class="carousel-item">
+          <a href="/travelcode/">
+          <img style="width:100%;height:400px;" src="{% static 'images/subp2.png' %}">
+          </a>
+      </div>
+      <div class="carousel-item">
+          <a href="/travelguide/">
+          <img style="width:100%;height:400px;" src="{% static 'images/subp3.png' %}">
+          </a>
+      </div>
+      <div class="carousel-item">
+          <a href="/pcs/">
+          <img style="width:100%;height:400px;" src="{% static 'images/subp4.jpeg' %}">
+          </a>
+      </div>
+      <div class="carousel-item">
+          <a href="/chpolicy/">
+          <img style="width:100%;height:400px;" src="{% static 'images/subp5.png' %}">
+          </a>
+      </div>
+      <div class="carousel-item">
+          <a href="/auspolicy/">
+          <img style="width:100%;height:400px;" src="{% static 'images/subp6.png' %}">
+          </a>
+      </div>
+  </div>
+
+  <!-- 左右切换按钮 -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+<!-- Comment list
+================================================= -->
+<div id="comment_list" style="width:50%;margin-left:420px;margin-top:70px;line-height:30%;">
+    <h1 style="padding-left:36px;">Comments:</h1>
+<ul class="comment_border">
+ {% for comment in comments %}
+     <li>
+     <div class="border" style="background-color:white;padding:20px;margin:20px">
+         <p>{{comment.name|capfirst}}</p>
+         {% if comment.email %}
+         <p>Email: {{ comment.email }}</p>
+          {% endif %}
+         <p>Score: {{ comment.cs }}</p>
+         {% if comment.msg %}
+         <p style="text-align: left;">Comment: {{ comment.msg }}</p>
+          {% endif %}
+     </div>
+         <br>
+
+     </li>
+ {% endfor %}
+</ul>
+</div>
+    <div class="clickcomment" style="opacity: 0.5;font-size:25px;text-align:right;border-style:solid; border-radius:25px;margin-left:1060px;padding:20px 20px 10px 10px;
+    margin-bottom:20px;margin-right:20px;">
+        <a style="font-style:italic; color:black;text-decoration: none;" href="/regist/">Leave Your Comment, Click Me</a>
+    </div>
+</div>
+
+{% endblock %}

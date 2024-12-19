@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'home1.css' %}">
+    <link rel="stylesheet" href="{% static 'vippage.css' %}">
+    <title>Travelling to China</title>
+</head>
+
+<body onload="showLeftTime()" style="background-image: url({% static 'images/bg.jpeg' %});">
+
+<div id="navigation">
+
+    <ul>
+        <li><div><img class="group_logo" border="0" src="{% static 'images/logo.png' %}" alt="Sparkling logo" width="150" height="70"></div></li>
+        <li>
+            <div class="dropdown">
+            <a href="/" id="n2">Home</a>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <a href="/" id="n2">Health Certificate</a>
+                <div class="dropdown-content">
+                    <a href="/healthcode/" id="n1">Guide for Health Code</a>
+                    <a href="/travelcode/" id="n1">Guide for Travel Code</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <a href="/" id="n2">Online Travel in China</a>
+                <div class="dropdown-content">
+                    <a href="/travelguide/" id="n1">Travel Guide</a>
+                    <a href="/pcs/" id="n1">Payment Contactless System</a>
+                </div>
+            </div>
+        </li>
+
+         <li>
+            <div class="dropdown">
+            <a href="/" id="n2">Policy Comparison</a>
+                <div class="dropdown-content">
+                    <a href="/chpolicy/" id="n1">
+                        <img src="{% static 'images/Panda.jpg' %}" alt="China" width="150" height="70">
+                    </a>
+                    <a href="/auspolicy/" id="n1">
+                        <img src="{% static 'images/Kangaroo.jpg' %}" alt="Australia" width="150" height="70">
+                    </a>
+                </div>
+            </div>
+        </li>
+
+
+
+        <li>
+            <div class="dropdown">
+            <span><img src="{% static 'images/userlogo.jpg' %}" alt="regist" width="40" height="10"></span>
+                <div class="dropdown-content">
+
+                    <a href="/regist/"  id="regist">Regist</a>
+                    <a href="/login/"  id="login">Login</a>
+                </div>
+            </div>
+        </li>
+
+        <li id="show" style="float:right;"></li>
+
+    </ul>
+
+</div>
+
+
+
+
+<script>
+     $(document).ready(function() {
+         $("#header-logo-image").mouseover(function() {
+           $("#header-logo-image #intro").show();
+         });
+         $("#header-logo-image").mouseout(function() {
+           $("#header-logo-image #intro").hide();
+         });
+     });
+</script>
+
+<script language="javascript" type="text/javascript">
+var initializationTime=(new Date()).getTime();
+function showLeftTime()
+{
+var now=new Date();
+var hours=now.getHours();
+var minutes=now.getMinutes();
+var seconds=now.getSeconds();
+document.all.show.innerHTML= "Time    "+hours+":"+minutes+":"+seconds+"";
+var timeID=setTimeout(showLeftTime,1000);
+}
+</script>
+
+
+<div>
+{% block content %}
+{% endblock %}
+    
+</div>
+<div id="bottom-information">
+    <ul>
+        <li><img src="{% static 'images/icons.png' %}" alt="communication ways"></li>
+        <li>
+            Copyright @ 2021 Sparkling travel program. All rights reserved
+        </li>
+        <li>
+            ---------------------------------------------------------------------------------------------------------
+        </li>
+        <li>
+            This website is founded to provide convenience for those who want to travel to China, especially Australians.<br/>
+            Sparkling are responsible for operating, controlling and managing.<br/>
+            Website includes, without limitation, its content, technical infrastructure and policies.
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

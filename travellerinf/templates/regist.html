@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="{% static 'regist.css' %}">
+    <title>Regist</title>
+</head>
+
+<body style="background-image: url({% static 'images/bgregist.jpeg' %});">
+<img alt="Sparkling" style="width: 15%;padding-top: 2em;" class="sparkling-logo" src="{% static 'images/logo.png' %}">
+    <div style="width: 100%; margin: 0 auto; padding-top: 3em;padding-bottom: 5em;">
+          <div class="ui stackable centered column grid">
+            <div class="centered row">
+              <div class="six wide column">
+                  <div style="padding-bottom: 5em; background-color: white;" class="ui segment">
+                  <div class="header" >
+                      <a style="color: black;" class="x-close" href="/">X</a>
+                  </div>
+                  <div class="form-header">
+                      <div class="sign-up-title">REGIST</div>
+                      <br>
+                      <div class="already-user">
+                          Having a account？
+                          <a href="/login/">Login</a>
+                      </div>
+                      <br>
+                  </div>
+                  <form action="/regist/" method="POST" class="ui form">
+                      {% csrf_token %}
+                      <p style="color: #ff0008">{{ msg }}</p>
+                    <div class="field">
+                      <label for="username">Username：</label>
+                      <input type="text" name="username" id="">
+                    </div>
+                    <div class="field">
+                      <label for="password">Password：</label>
+                      <input type="password" name="password" id="">
+                    </div>
+                    <div class="field">
+                      <label for="password2">Repeat the password：</label>
+                      <input type="password" name="password2" id="">
+                    </div>
+                    <div class="field">
+                      <label for="email">Email：</label>
+                      <input type="text" name="email" id="">
+                    </div>
+
+                    <input style="float: right;" class="ui inverted green button" type="submit" value="Confirm">
+
+                      <div translate="term-of-use.sigup" class="tail">
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                          <br>
+                        *Agreeing
+                         <a href="/" target="_blank">Terms of Use</a>
+                         when registing already
+                         <br>
+                         Willing to receive mail from Sparkling, and read
+                         <a href="/" target="_blank">Privacy Policy</a>
+                         .
+                      </div>
+                  </form>
+                </div>
+            </div>
+          </div>
+
+
+    </div>
+</body>
+
+</html>
+

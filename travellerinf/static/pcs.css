@@ -1,0 +1,67 @@
+.pcs{
+    text-align: justify;
+}
+
+
+.carousel-inner p{
+    font:20px/30px ;
+    color:black;
+    text-align:right;
+    margin-bottom: 100px;
+}
+
+
+.carousel-inner img {
+    width: 300px;
+    height: 300px;
+
+}
+
+.carousel.slide {
+    width: 70%;
+    height: 70%;
+    margin-left:100px;
+    margin-top:70px;
+
+}
+
+.APP img{
+    width: 500px;
+    height: auto;
+
+}
+
+.WP {
+    border-left-style:dotted;
+    padding: 50px;
+    margin-left:30px;
+    float:right;
+}
+
+.AP {
+    padding: 50px;
+    margin:20px;
+    margin-top:0px;
+
+
+}
+
+.paySys{
+    font:italic bold 30px/30px Georgia,serif;
+}
+
+.titleB{
+    font:italic bold 20px/30px Georgia,serif;
+    margin:10px;
+
+}
+
+.textS{
+    font:18px/30px Georgia,serif;
+
+}
+
+ .acolor {
+    color:#686868;
+    text-decoration: none;
+}
