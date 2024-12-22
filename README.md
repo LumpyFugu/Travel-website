@@ -1,1 +1,1 @@
-Web page creation
+Django Web page creation
