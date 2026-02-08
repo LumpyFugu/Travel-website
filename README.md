@@ -77,5 +77,24 @@ git clone https://github.com/LumpyFugu/Travel-website.git
 cd Travel-website
 
 ### 2. Create a virtual environment
+(For MacOS)  
 python -m venv venv  
-source venv/bin/activate
+source venv/bin/activate  
+
+(For Windows)  
+venv\Scripts\activate
+
+### 3. Install dependencies
+pip install -r requirements.txt  
+
+### 4. Run migrations
+python manage.py migrate  
+
+### 5. Start the server
+python manage.py runserver  
+Open: http://127.0.0.1:8000  
+
+---
+
+## Live Demo
+
